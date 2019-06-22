@@ -1,0 +1,15 @@
+package sandbox.src.main.java.ru.stqa.pft.sandbox;
+
+public class Square {
+  double l;
+
+  public Square(double l){
+
+    this.l = l;
+
+  }
+  public double area(){
+    return this.l * this.l;
+
+  }
+}

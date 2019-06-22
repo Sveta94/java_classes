@@ -9,3 +9,19 @@ gradle-app.setting
 
 
 .idea/workspace.xml
+*.xml
+*.xml
+*.xml
+out/production/java_classes/.idea/vcs.xml
+out/production/java_classes/META-INF/java_classes.kotlin_module
+out/production/java_classes/myFirstProgram.class
+out/production/java_classes/.idea/vcs.xml
+out/production/java_classes/sandbox/build.gradle
+out/production/java_classes/sandbox/src/main/java/ru/stqa/pft/sandbox/MyFirstProgram.class
+out/production/java_classes/sandbox/build.gradle
+out/production/java_classes/sandbox/build.gradle
+out/production/java_classes/sandbox/build.gradle
+out/production/java_classes/myFirstProgram.class
+out/production/java_classes/.idea/vcs.xml
+out/production/java_classes/myFirstProgram.class
+out/production/java_classes/.idea/vcs.xml
