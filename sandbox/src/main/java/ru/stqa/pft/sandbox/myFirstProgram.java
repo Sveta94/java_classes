@@ -1,10 +1,11 @@
-package sandbox.src.main.java.ru.stqa.pft.sandbox;
+package ru.stqa.pft.sandbox;
 
 public class MyFirstProgram {
 
   public static void main(String[] args) {
- Point p1 = new Point(4,3);
- Point p2 = new Point(3,-2);
+ Point p1 = new Point(8,2);
+ Point p2 = new Point(6,15);
+
 
     System.out.println(distanceBetweenPoints(p1, p2));
     System.out.println(p1.distanceBetweenPoints1(p2));
