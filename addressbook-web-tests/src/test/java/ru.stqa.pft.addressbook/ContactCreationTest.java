@@ -39,7 +39,7 @@ public class ContactCreationTest {
 
 
     gotoContactPage("add new");
-    fillContactForm("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "test", "test", "test");
+    fillContactForm(new ContactData("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "test", "test", "test"));
     submitContactCreation("(//input[@name='submit'])[2]");
     returnToContactPage("home page");
     logout("Logout");
@@ -57,48 +57,48 @@ public class ContactCreationTest {
     wb.findElement(By.xpath(s)).click();
   }
 
-  private void fillContactForm(String firstname, String lastname, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String notes, String address2, String phone2) {
+  private void fillContactForm(ContactData contactData) {
     wb.findElement(By.name("firstname")).click();
     wb.findElement(By.name("firstname")).clear();
-    wb.findElement(By.name("firstname")).sendKeys(firstname);
+    wb.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
     wb.findElement(By.name("lastname")).click();
     wb.findElement(By.name("lastname")).clear();
-    wb.findElement(By.name("lastname")).sendKeys(lastname);
+    wb.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
     wb.findElement(By.name("nickname")).click();
     wb.findElement(By.name("nickname")).clear();
-    wb.findElement(By.name("nickname")).sendKeys(nickname);
+    wb.findElement(By.name("nickname")).sendKeys(contactData.getNickname());
     wb.findElement(By.name("company")).click();
     wb.findElement(By.name("company")).clear();
-    wb.findElement(By.name("company")).sendKeys(company);
+    wb.findElement(By.name("company")).sendKeys(contactData.getCompany());
     wb.findElement(By.name("address")).click();
     wb.findElement(By.name("address")).clear();
-    wb.findElement(By.name("address")).sendKeys(address);
+    wb.findElement(By.name("address")).sendKeys(contactData.getAddress());
     wb.findElement(By.name("mobile")).click();
     wb.findElement(By.name("mobile")).clear();
-    wb.findElement(By.name("mobile")).sendKeys(mobile);
+    wb.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
     wb.findElement(By.name("email")).click();
     wb.findElement(By.name("email")).click();
     wb.findElement(By.name("email")).clear();
-    wb.findElement(By.name("email")).sendKeys(email);
+    wb.findElement(By.name("email")).sendKeys(contactData.getEmail());
     wb.findElement(By.name("bday")).click();
-    new Select(wb.findElement(By.name("bday"))).selectByVisibleText(bdayDay);
+    new Select(wb.findElement(By.name("bday"))).selectByVisibleText(contactData.getBdayDay());
     wb.findElement(By.xpath("//option[@value='7']")).click();
     wb.findElement(By.name("bmonth")).click();
-    new Select(wb.findElement(By.name("bmonth"))).selectByVisibleText(bdayMonth);
+    new Select(wb.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getBdayMonth());
     wb.findElement(By.xpath("//option[@value='February']")).click();
     wb.findElement(By.name("byear")).click();
     wb.findElement(By.name("byear")).clear();
-    wb.findElement(By.name("byear")).sendKeys(bdayYear);
+    wb.findElement(By.name("byear")).sendKeys(contactData.getBdayYear());
     wb.findElement(By.name("notes")).click();
     // ERROR: Caught exception [ERROR: Unsupported command [doubleClick | name=notes | ]]
     wb.findElement(By.name("notes")).clear();
-    wb.findElement(By.name("notes")).sendKeys(notes);
+    wb.findElement(By.name("notes")).sendKeys(contactData.getNotes());
     wb.findElement(By.name("address2")).click();
     wb.findElement(By.name("address2")).clear();
-    wb.findElement(By.name("address2")).sendKeys(address2);
+    wb.findElement(By.name("address2")).sendKeys(contactData.getAddress2());
     wb.findElement(By.name("phone2")).click();
     wb.findElement(By.name("phone2")).clear();
-    wb.findElement(By.name("phone2")).sendKeys(phone2);
+    wb.findElement(By.name("phone2")).sendKeys(contactData.getPhone2());
   }
 
   private void gotoContactPage(String s) {
