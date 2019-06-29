@@ -25,3 +25,14 @@ out/production/java_classes/myFirstProgram.class
 out/production/java_classes/.idea/vcs.xml
 out/production/java_classes/myFirstProgram.class
 out/production/java_classes/.idea/vcs.xml
+addressbook-web-tests/out/test/classes/com/example/tests/GroupCreationTest.class
+addressbook-web-tests/out/test/classes/META-INF/addressbook-web-tests.main.kotlin_module
+out/production/java_classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Point.class
+out/production/java_classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Rectangle.class
+out/production/java_classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Square.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/MyFirstProgram.class
+sandbox/out/production/classes/ru/stqa/pft/sandbox/Point.class
+sandbox/out/production/classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Rectangle.class
+sandbox/out/production/classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Square.class
+sandbox/out/test/classes/ru/stqa/pft/sandbox/PointTests.class
+sandbox/out/test/classes/ru/stqa/pft/sandbox/SquareTests.class
