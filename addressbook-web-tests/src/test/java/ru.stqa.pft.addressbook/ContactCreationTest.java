@@ -57,6 +57,7 @@ public class ContactCreationTest {
     wb.findElement(By.xpath(s)).click();
   }
 
+
   private void fillContactForm(ContactData contactData) {
     wb.findElement(By.name("firstname")).click();
     wb.findElement(By.name("firstname")).clear();
