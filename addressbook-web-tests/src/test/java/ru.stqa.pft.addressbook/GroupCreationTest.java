@@ -1,35 +1,34 @@
 package ru.stqa.pft.addressbook;
 
-import java.util.concurrent.TimeUnit;
-import org.testng.annotations.*;
-import static org.testng.Assert.*;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
+
+import java.util.concurrent.TimeUnit;
 
 public class GroupCreationTest {
-  private WebDriver driver;
-  private String baseUrl;
-  private boolean acceptNextAlert = true;
-  private StringBuffer verificationErrors = new StringBuffer();
+  private WebDriver wd;
 
-  @BeforeClass(alwaysRun = true)
+  @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    baseUrl = "https://www.katalon.com/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    wd = new FirefoxDriver();
+    wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     login("admin", "secret");
   }
 
   private void login(String username, String password) {
-    driver.get("http://localhost/addressbook/");
-    driver.findElement(By.name("user")).click();
-    driver.findElement(By.name("user")).clear();
-    driver.findElement(By.name("user")).sendKeys(username);
-    driver.findElement(By.name("pass")).click();
-    driver.findElement(By.name("pass")).clear();
-    driver.findElement(By.name("pass")).sendKeys(password);
-    driver.findElement(By.xpath("//input[@value='Login']")).click();
+    wd.get("http://localhost/addressbook/");
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys(username);
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys(password);
+    wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
   @Test
@@ -43,49 +42,46 @@ public class GroupCreationTest {
   }
 
   private void logout(String logout) {
-    driver.findElement(By.linkText(logout)).click();
+    wd.findElement(By.linkText(logout)).click();
   }
 
   private void returnToGroupPage(String s) {
-    driver.findElement(By.linkText(s)).click();
+    wd.findElement(By.linkText(s)).click();
   }
 
   private void submitGroupCreation(String submit) {
-    driver.findElement(By.name(submit)).click();
+    wd.findElement(By.name(submit)).click();
   }
 
   private void fillGroupForm(GroupData groupData) {
-    driver.findElement(By.name("group_name")).click();
-    driver.findElement(By.name("group_name")).clear();
-    driver.findElement(By.name("group_name")).sendKeys(groupData.getName());
-    driver.findElement(By.name("group_header")).click();
-    driver.findElement(By.name("group_header")).clear();
-    driver.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
-    driver.findElement(By.name("group_footer")).click();
-    driver.findElement(By.name("group_footer")).clear();
-    driver.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
+    wd.findElement(By.name("group_name")).click();
+    wd.findElement(By.name("group_name")).clear();
+    wd.findElement(By.name("group_name")).sendKeys(groupData.getName());
+    wd.findElement(By.name("group_header")).click();
+    wd.findElement(By.name("group_header")).clear();
+    wd.findElement(By.name("group_header")).sendKeys(groupData.getHeader());
+    wd.findElement(By.name("group_footer")).click();
+    wd.findElement(By.name("group_footer")).clear();
+    wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
   }
 
   private void initGroupCreation(String s) {
-    driver.findElement(By.name(s)).click();
+    wd.findElement(By.name(s)).click();
   }
 
   private void gotoGroupPage(String groups) {
-    driver.findElement(By.linkText(groups)).click();
+    wd.findElement(By.linkText(groups)).click();
   }
 
-  @AfterClass(alwaysRun = true)
+  @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
-    driver.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
+    wd.quit();
+
   }
 
   private boolean isElementPresent(By by) {
     try {
-      driver.findElement(by);
+      wd.findElement(by);
       return true;
     } catch (NoSuchElementException e) {
       return false;
@@ -94,25 +90,12 @@ public class GroupCreationTest {
 
   private boolean isAlertPresent() {
     try {
-      driver.switchTo().alert();
+      wd.switchTo().alert();
       return true;
     } catch (NoAlertPresentException e) {
       return false;
     }
   }
 
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = driver.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
-    }
-  }
+
 }
