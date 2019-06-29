@@ -20,6 +20,10 @@ public class ContactCreationTest {
     wb = new FirefoxDriver();
     wb.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
+    login();
+  }
+
+  private void login() {
     wb.get("http://localhost/addressbook/");
     wb.findElement(By.name("user")).clear();
     wb.findElement(By.name("user")).sendKeys("admin");
@@ -33,8 +37,27 @@ public class ContactCreationTest {
   @Test
   public void testContactCreation() throws Exception {
 
-    wb.findElement(By.id("content")).click();
-    wb.findElement(By.linkText("add new")).click();
+
+    gotoContactPage("add new");
+    fillContactForm();
+    submitContactCreation("(//input[@name='submit'])[2]");
+    returnToContactPage("home page");
+    logout("Logout");
+  }
+
+  private void logout(String logout) {
+    wb.findElement(By.linkText(logout)).click();
+  }
+
+  private void returnToContactPage(String s) {
+    wb.findElement(By.linkText(s)).click();
+  }
+
+  private void submitContactCreation(String s) {
+    wb.findElement(By.xpath(s)).click();
+  }
+
+  private void fillContactForm() {
     wb.findElement(By.name("firstname")).click();
     wb.findElement(By.name("firstname")).clear();
     wb.findElement(By.name("firstname")).sendKeys("Svetlana");
@@ -76,9 +99,10 @@ public class ContactCreationTest {
     wb.findElement(By.name("phone2")).click();
     wb.findElement(By.name("phone2")).clear();
     wb.findElement(By.name("phone2")).sendKeys("test");
-    wb.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
-    wb.findElement(By.linkText("home page")).click();
-    wb.findElement(By.linkText("Logout")).click();
+  }
+
+  private void gotoContactPage(String s) {
+    wb.findElement(By.linkText(s)).click();
   }
 
   @AfterMethod(alwaysRun = true)
