@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="088f660d-b754-4228-9198-aa932dd11282" name="Default Changelist" comment="Test for counting distance between points">
-      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/ContactCreationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/ContactCreationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -46,11 +48,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="390">
+              <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/ContactCreationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="29" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -78,6 +101,7 @@
         <option value="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTests.java" />
         <option value="$PROJECT_DIR$/../addressbook-web-tests/build.gradle" />
         <option value="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTest.java" />
+        <option value="$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/ContactCreationTest.java" />
       </list>
     </option>
   </component>
@@ -160,7 +184,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.GroupCreationTest.testGroupCreation (1)">
+  <component name="RunManager" selected="TestNG.ContactCreationTest">
+    <configuration name="ContactCreationTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java_classes.addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.pft.addressbook.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.pft.addressbook" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.ContactCreationTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupCreationTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="java_classes.addressbook-web-tests.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.pft.addressbook.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.stqa.pft.addressbook" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.GroupCreationTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GroupCreationTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="java_classes.addressbook-web-tests.test" />
       <extension name="coverage">
@@ -214,47 +272,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GroupCreationTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="java_classes.addressbook-web-tests.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.pft.addressbook.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.pft.addressbook" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.addressbook.GroupCreationTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PointTests" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="sandbox.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.pft.sandbox.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.stqa.pft.sandbox" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.pft.sandbox.PointTests" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ContactCreationTest" />
+        <item itemvalue="TestNG.GroupCreationTest (1)" />
         <item itemvalue="TestNG.GroupCreationTest.testGroupCreation (1)" />
         <item itemvalue="TestNG.GroupCreationTest" />
         <item itemvalue="TestNG.GroupCreationTest.testGroupCreation" />
-        <item itemvalue="TestNG.GroupCreationTests" />
-        <item itemvalue="TestNG.PointTests" />
       </list>
     </recent_temporary>
   </component>
@@ -280,39 +304,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GroupCreationTests - 2019.06.28 at 16h 14m 24s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTests - 2019.06.28 at 16h 39m 12s.xml">
-      <configuration name="GroupCreationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest_testGroupCreation - 2019.06.28 at 16h 57m 42s.xml">
-      <configuration name="GroupCreationTest.testGroupCreation" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest - 2019.06.28 at 20h 01m 17s.xml">
-      <configuration name="GroupCreationTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest - 2019.06.28 at 20h 21m 57s.xml">
-      <configuration name="GroupCreationTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest - 2019.06.28 at 20h 23m 32s.xml">
-      <configuration name="GroupCreationTest" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest_testGroupCreation - 2019.06.29 at 08h 03m 04s.xml">
-      <configuration name="GroupCreationTest.testGroupCreation" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest_testGroupCreation - 2019.06.29 at 08h 06m 21s.xml">
-      <configuration name="GroupCreationTest.testGroupCreation" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="GroupCreationTest - 2019.06.29 at 08h 08m 35s.xml">
-      <configuration name="GroupCreationTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="GroupCreationTest_testGroupCreation_(1) - 2019.06.29 at 09h 55m 00s.xml">
       <configuration name="GroupCreationTest.testGroupCreation (1)" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 04m 16s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="GroupCreationTest_(1) - 2019.06.29 at 11h 05m 30s.xml">
+      <configuration name="GroupCreationTest (1)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 06m 12s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 11m 07s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 41m 18s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 43m 12s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 51m 11s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 54m 28s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="ContactCreationTest - 2019.06.29 at 11h 59m 10s.xml">
+      <configuration name="ContactCreationTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="184" y="63" width="1400" height="820" extended-state="1" />
+    <frame x="184" y="63" width="1400" height="820" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25149253" />
@@ -324,8 +348,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32994187" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6875" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997093" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -422,6 +446,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTests.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/reflect/Constructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="499" column="24" selection-start-line="499" selection-start-column="24" selection-end-line="499" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-remote-driver/4.0.0-alpha-1/e1245ab2be182ef8762d680da5861a5b13d9efd5/selenium-remote-driver-4.0.0-alpha-1-sources.jar!/org/openqa/selenium/remote/codec/w3c/W3CHttpResponseCodec.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="189" column="25" selection-start-line="189" selection-start-column="25" selection-end-line="189" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/ContactData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -431,8 +476,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/GroupCreationTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+        <state relative-caret-position="390">
+          <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/src/test/java/ru.stqa.pft.addressbook/ContactCreationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="29" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
