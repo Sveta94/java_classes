@@ -5,20 +5,21 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-  private WebDriver wd;
+  public WebDriver wd;
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-    login("admin", "secret");
+   login("admin", "secret");
   }
 
   public void login(String username, String password) {
@@ -86,5 +87,69 @@ public class TestBase {
     } catch (NoAlertPresentException e) {
       return false;
     }
+  }
+
+  public void deleteSelectedGroup() {
+    wd.findElement(By.name("delete")).click();
+  }
+
+  public void selectGroup() {
+    wd.findElement(By.name("selected[]")).click();
+  }
+
+  protected void returnToContactPage(String s) {
+    wd.findElement(By.linkText(s)).click();
+  }
+
+  protected void submitContactCreation(String s) {
+    wd.findElement(By.xpath(s)).click();
+  }
+
+  protected void fillContactForm(ContactData contactData) {
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).clear();
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).clear();
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
+    wd.findElement(By.name("nickname")).click();
+    wd.findElement(By.name("nickname")).clear();
+    wd.findElement(By.name("nickname")).sendKeys(contactData.getNickname());
+    wd.findElement(By.name("company")).click();
+    wd.findElement(By.name("company")).clear();
+    wd.findElement(By.name("company")).sendKeys(contactData.getCompany());
+    wd.findElement(By.name("address")).click();
+    wd.findElement(By.name("address")).clear();
+    wd.findElement(By.name("address")).sendKeys(contactData.getAddress());
+    wd.findElement(By.name("mobile")).click();
+    wd.findElement(By.name("mobile")).clear();
+    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).clear();
+    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
+    wd.findElement(By.name("bday")).click();
+    new Select(wd.findElement(By.name("bday"))).selectByVisibleText(contactData.getBdayDay());
+    wd.findElement(By.xpath("//option[@value='7']")).click();
+    wd.findElement(By.name("bmonth")).click();
+    new Select(wd.findElement(By.name("bmonth"))).selectByVisibleText(contactData.getBdayMonth());
+    wd.findElement(By.xpath("//option[@value='February']")).click();
+    wd.findElement(By.name("byear")).click();
+    wd.findElement(By.name("byear")).clear();
+    wd.findElement(By.name("byear")).sendKeys(contactData.getBdayYear());
+    wd.findElement(By.name("notes")).click();
+    // ERROR: Caught exception [ERROR: Unsupported command [doubleClick | name=notes | ]]
+    wd.findElement(By.name("notes")).clear();
+    wd.findElement(By.name("notes")).sendKeys(contactData.getNotes());
+    wd.findElement(By.name("address2")).click();
+    wd.findElement(By.name("address2")).clear();
+    wd.findElement(By.name("address2")).sendKeys(contactData.getAddress2());
+    wd.findElement(By.name("phone2")).click();
+    wd.findElement(By.name("phone2")).clear();
+    wd.findElement(By.name("phone2")).sendKeys(contactData.getPhone2());
+  }
+
+  protected void gotoContactPage(String s) {
+    wd.findElement(By.linkText(s)).click();
   }
 }
