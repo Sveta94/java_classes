@@ -36,3 +36,5 @@ sandbox/out/production/classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Rectang
 sandbox/out/production/classes/sandbox/src/main/java/ru/stqa/pft/sandbox/Square.class
 sandbox/out/test/classes/ru/stqa/pft/sandbox/PointTests.class
 sandbox/out/test/classes/ru/stqa/pft/sandbox/SquareTests.class
+addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/GroupCreationTest.class
+addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/GroupData.class
