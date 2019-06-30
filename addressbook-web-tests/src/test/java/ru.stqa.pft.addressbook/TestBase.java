@@ -33,16 +33,16 @@ public class TestBase {
     wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
-  public void logout(String logout) {
-    wd.findElement(By.linkText(logout)).click();
+  public void logout() {
+    wd.findElement(By.linkText("Logout")).click();
   }
 
-  public void returnToGroupPage(String s) {
-    wd.findElement(By.linkText(s)).click();
+  public void returnToGroupPage() {
+    wd.findElement(By.linkText("group page")).click();
   }
 
-  public void submitGroupCreation(String submit) {
-    wd.findElement(By.name(submit)).click();
+  public void submitGroupCreation() {
+    wd.findElement(By.name("submit")).click();
   }
 
   public void fillGroupForm(GroupData groupData) {
@@ -57,12 +57,12 @@ public class TestBase {
     wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
   }
 
-  public void initGroupCreation(String s) {
-    wd.findElement(By.name(s)).click();
+  public void initGroupCreation() {
+    wd.findElement(By.name("new")).click();
   }
 
-  public void gotoGroupPage(String groups) {
-    wd.findElement(By.linkText(groups)).click();
+  public void gotoGroupPage() {
+    wd.findElement(By.linkText("groups")).click();
   }
 
   @AfterMethod(alwaysRun = true)
@@ -97,12 +97,12 @@ public class TestBase {
     wd.findElement(By.name("selected[]")).click();
   }
 
-  protected void returnToContactPage(String s) {
-    wd.findElement(By.linkText(s)).click();
+  protected void returnToContactPage() {
+    wd.findElement(By.linkText("home page")).click();
   }
 
-  protected void submitContactCreation(String s) {
-    wd.findElement(By.xpath(s)).click();
+  protected void submitContactCreation() {
+    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
   }
 
   protected void fillContactForm(ContactData contactData) {
@@ -149,7 +149,8 @@ public class TestBase {
     wd.findElement(By.name("phone2")).sendKeys(contactData.getPhone2());
   }
 
-  protected void gotoContactPage(String s) {
-    wd.findElement(By.linkText(s)).click();
+  protected void gotoContactPage() {
+
+    wd.findElement(By.linkText("add new")).click();
   }
 }

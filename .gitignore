@@ -40,3 +40,5 @@ addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/GroupCreationTest
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/GroupData.class
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/ContactCreationTest.class
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/ContactData.class
+addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/GroupDeletionTests.class
+addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/TestBase.class

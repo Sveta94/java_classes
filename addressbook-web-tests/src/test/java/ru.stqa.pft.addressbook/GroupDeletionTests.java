@@ -8,11 +8,11 @@ public class GroupDeletionTests extends TestBase {
   @Test
   public void testGroupDeletion() throws Exception {
 
-    gotoGroupPage("groups");
+    gotoGroupPage();
     selectGroup();
     deleteSelectedGroup();
-    returnToGroupPage("group page");
-    logout("Logout");
+    returnToGroupPage();
+    logout();
   }
 
 
