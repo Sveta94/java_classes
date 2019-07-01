@@ -4,12 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-public class GroupHelper {
-  private WebDriver wd;
+public class GroupHelper extends HelperBase{
 
   public GroupHelper(WebDriver wd) {
+    super(wd);
 
-    this.wd = wd;
   }
 
   public void returnToGroupPage() {
@@ -29,7 +28,6 @@ public class GroupHelper {
   }
 
 
-
   public void initGroupCreation() {
     click(By.name("new"));
   }
@@ -40,16 +38,6 @@ public class GroupHelper {
 
   public void selectGroup() {
     click(By.name("selected[]"));
-  }
-
-  private void type(By locator, String text) {
-    click(locator);
-    wd.findElement(locator).clear();
-    wd.findElement(locator).sendKeys(text);
-  }
-
-  private void click(By locator) {
-    wd.findElement(locator).click();
   }
 
 
