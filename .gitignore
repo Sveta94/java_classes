@@ -52,3 +52,4 @@ addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/tests/GroupDeleti
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/tests/TestBase.class
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/appmanager/NavigationHelper.class
 addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/appmanager/SessionHelper.class
+addressbook-web-tests/out/test/classes/ru/stqa/pft/addressbook/appmanager/HelperBase.class
