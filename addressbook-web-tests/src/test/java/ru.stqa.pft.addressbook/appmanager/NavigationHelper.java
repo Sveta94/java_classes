@@ -14,6 +14,7 @@ public class NavigationHelper {
 
 
   public void gotoGroupPage() {
+
     wd.findElement(By.linkText("groups")).click();
   }
 
