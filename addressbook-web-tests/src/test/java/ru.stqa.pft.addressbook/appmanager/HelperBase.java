@@ -24,4 +24,9 @@ public class HelperBase {
   public void select(By locator, String text) {
     new Select(wd.findElement(locator)).selectByVisibleText(text);
   }
+
+
+  public void close() {
+    wd.switchTo().alert().accept();
+  }
 }

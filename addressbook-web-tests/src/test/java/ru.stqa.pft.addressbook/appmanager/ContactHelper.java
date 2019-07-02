@@ -39,4 +39,31 @@ public class ContactHelper extends HelperBase {
   }
 
 
+  public void editContact() {
+
+    click(By.xpath("(//img[@alt='Edit'])[3]"));
+  }
+
+  public void submitContactModification() {
+
+    click(By.name("update"));
+  }
+
+  public void selectContact() {
+    click(By.name("selected[]"));
+  }
+
+  public void deleteSelectedContact() {
+
+    click(By.xpath("//input[@value='Delete']"));
+  }
+
+  public void deleteContactFromEditPage() {
+    click(By.xpath("(//input[@name='update'])[3]"));
+  }
+
+  public void confirmDeletion() {
+    close();
+  }
+
 }
