@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.stqa.pft.addressbook.appmanager.AppManager;
@@ -10,7 +11,7 @@ public class TestBase {
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
-    app.init();
+    app.init(BrowserType.CHROME);
   }
 
   @AfterMethod(alwaysRun = true)
