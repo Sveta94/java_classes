@@ -7,11 +7,11 @@ import ru.stqa.pft.addressbook.appmanager.AppManager;
 
 public class TestBase {
 
-  protected final AppManager app = new AppManager();
+  protected final AppManager app = new AppManager(BrowserType.CHROME);
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
-    app.init(BrowserType.CHROME);
+    app.init();
   }
 
   @AfterMethod(alwaysRun = true)

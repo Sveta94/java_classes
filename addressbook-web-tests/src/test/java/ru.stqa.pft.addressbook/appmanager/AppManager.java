@@ -12,7 +12,23 @@ import org.openqa.selenium.remote.BrowserType;
 import java.util.concurrent.TimeUnit;
 
 public class AppManager {
+
   public WebDriver wd;
+
+  public AppManager(String browser){
+
+    if(browser.equals(BrowserType.FIREFOX)) {
+      wd = new FirefoxDriver();
+    }
+    else if (browser.equals(BrowserType.CHROME)){
+      wd = new ChromeDriver();
+    }
+    else if(browser.equals(BrowserType.IE)){
+      wd = new InternetExplorerDriver();
+    }
+  }
+
+
   private GroupHelper groupHelper;
   private ContactHelper contactHelper;
   private SessionHelper sessionHelper;
@@ -35,17 +51,8 @@ public class AppManager {
   }
 
 
-  public void init(String browser) {
+  public void init() {
 
-    if(browser.equals(BrowserType.FIREFOX)) {
-      wd = new FirefoxDriver();
-    }
-    else if (browser.equals(BrowserType.CHROME)){
-      wd = new ChromeDriver();
-    }
-    else if(browser.equals(BrowserType.IE)){
-      wd = new InternetExplorerDriver();
-    }
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
     groupHelper = new GroupHelper(wd);
