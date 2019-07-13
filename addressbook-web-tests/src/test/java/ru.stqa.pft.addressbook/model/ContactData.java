@@ -11,11 +11,11 @@ public class ContactData {
   private final String bdayDay;
   private final String bdayMonth;
   private final String bdayYear;
-  private final String notes;
-  private final String address2;
-  private final String phone2;
 
-  public ContactData(String firstname, String lastname, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String notes, String address2, String phone2) {
+
+  private final String group;
+
+  public ContactData(String firstname, String lastname, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear,  String group) {
     this.firstname = firstname;
     this.lastname = lastname;
     this.nickname = nickname;
@@ -26,9 +26,7 @@ public class ContactData {
     this.bdayDay = bdayDay;
     this.bdayMonth = bdayMonth;
     this.bdayYear = bdayYear;
-    this.notes = notes;
-    this.address2 = address2;
-    this.phone2 = phone2;
+    this.group = group;
   }
 
   public String getFirstname() {
@@ -71,15 +69,6 @@ public class ContactData {
     return bdayYear;
   }
 
-  public String getNotes() {
-    return notes;
-  }
-
-  public String getAddress2() {
-    return address2;
-  }
-
-  public String getPhone2() {
-    return phone2;
-  }
+  public String getGroup() { return group; }
 }
+
