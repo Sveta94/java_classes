@@ -13,17 +13,8 @@ public class AppManager {
 
   public WebDriver wd;
 
-  public AppManager(String browser){
+  public AppManager(){
 
-    if(browser.equals(BrowserType.FIREFOX)) {
-      wd = new FirefoxDriver();
-    }
-    else if (browser.equals(BrowserType.CHROME)){
-      wd = new ChromeDriver();
-    }
-    else if(browser.equals(BrowserType.IE)){
-      wd = new InternetExplorerDriver();
-    }
   }
 
 
@@ -49,7 +40,17 @@ public class AppManager {
   }
 
 
-  public void init() {
+  public void init(String browser) {
+
+    if(browser.equals(BrowserType.FIREFOX)) {
+      wd = new FirefoxDriver();
+    }
+    else if (browser.equals(BrowserType.CHROME)){
+      wd = new ChromeDriver();
+    }
+    else if(browser.equals(BrowserType.IE)){
+      wd = new InternetExplorerDriver();
+    }
 
     wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/");
