@@ -82,5 +82,9 @@ public class ContactHelper extends HelperBase {
     submitContactCreation();;
     n.gotoHomePage();
   }
+
+  public int contactCount() {
+    return wd.findElements(By.name("entry")).size();
+  }
 }
 
