@@ -17,7 +17,7 @@ public class ContactDeletionTests extends TestBase {
       app.getContactHelper().createNewContact(new ContactData("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "Test"));
     }
     int before = app.getContactHelper().contactCount();
-    app.getContactHelper().selectContact();
+    app.getContactHelper().selectContact(0);
     app.getContactHelper().deleteSelectedContact();
     app.getContactHelper().confirmDeletion();
     app.getNavigationHelper().gotoHomePage();
@@ -34,7 +34,7 @@ public class ContactDeletionTests extends TestBase {
       app.getContactHelper().createNewContact(new ContactData("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "Test"));
     }
     int before = app.getContactHelper().contactCount();
-    app.getContactHelper().editContact();
+    app.getContactHelper().editContact(0);
     app.getContactHelper().deleteContactFromEditPage();
     app.getNavigationHelper().gotoHomePage();
     int after = app.getContactHelper().contactCount();
