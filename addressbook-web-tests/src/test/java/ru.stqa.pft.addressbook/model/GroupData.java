@@ -6,7 +6,7 @@ public class GroupData {
   private final String name;
   private final String header;
   private final String footer;
-  private final int id;
+  private int id;
 
 
 
@@ -60,5 +60,7 @@ public class GroupData {
   }
 
   public int getId() { return id; }
+  public void setId(int id) { this.id = id; }
+
 
 }

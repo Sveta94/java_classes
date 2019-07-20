@@ -14,7 +14,7 @@ public class ContactData {
   private final String bdayMonth;
   private final String bdayYear;
   private final String group;
-  private final int id;
+  private int id;
 
   public ContactData(int  id, String firstName, String lastName, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String group) {
     this.firstname = firstName;
@@ -119,6 +119,8 @@ public class ContactData {
   public String getGroup() { return group; }
 
   public int getId() { return id; }
+
+  public void setId(int id) { this.id = id; }
 
 
 }
