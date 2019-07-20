@@ -14,21 +14,9 @@ public class ContactData {
   private final String bdayMonth;
   private final String bdayYear;
   private final String group;
-  private String id;
+  private final int id;
 
-  @Override
-  public String toString() {
-    return "ContactData{" +
-            "firstname='" + firstname + '\'' +
-            ", lastname='" + lastname + '\'' +
-            ", address='" + address + '\'' +
-            ", mobile='" + mobile + '\'' +
-            ", email='" + email + '\'' +
-            ", id='" + id + '\'' +
-            '}';
-  }
-
-  public ContactData(String  id, String firstName, String lastName, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String group) {
+  public ContactData(int  id, String firstName, String lastName, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String group) {
     this.firstname = firstName;
     this.lastname = lastName;
     this.nickname = nickname;
@@ -43,25 +31,6 @@ public class ContactData {
     this.id = id;
   }
 
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname) &&
-            Objects.equals(address, that.address) &&
-            Objects.equals(mobile, that.mobile) &&
-            Objects.equals(email, that.email) &&
-            Objects.equals(id, that.id);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(firstname, lastname, address, mobile, email, id);
-  }
-
   public ContactData(String firstName, String lastName, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String group) {
     this.firstname = firstName;
     this.lastname = lastName;
@@ -74,8 +43,39 @@ public class ContactData {
     this.bdayMonth = bdayMonth;
     this.bdayYear = bdayYear;
     this.group = group;
-    this.id = null;
+    this.id = 0;
   }
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", address='" + address + '\'' +
+            ", mobile='" + mobile + '\'' +
+            ", email='" + email + '\'' +
+            ", id=" + id +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname) &&
+            Objects.equals(address, that.address) &&
+            Objects.equals(mobile, that.mobile) &&
+            Objects.equals(email, that.email);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(firstname, lastname, address, mobile, email, id);
+  }
+
   public String getFirstname() {
     return firstname;
   }
@@ -118,7 +118,7 @@ public class ContactData {
 
   public String getGroup() { return group; }
 
-  public String getId() { return id; }
+  public int getId() { return id; }
 
 
 }
