@@ -13,10 +13,10 @@ public class ContactDeletionTests extends TestBase {
 
   @BeforeClass
   private void ensurePreconditions() {
-    app.getNavigationHelper().gotoHomePage();
+    app.navigationHelper().gotoHomePage();
 
-    if(! app.getContactHelper().isThereAContact()){
-      app.getContactHelper().createNewContact(new ContactData("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "Test"));
+    if(app.contact().list().size() == 0){
+      app.contact().create(new ContactData("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "Test"));
     }
   }
 
@@ -24,9 +24,9 @@ public class ContactDeletionTests extends TestBase {
 
   public void  testDeleteContactFromHomePage(){
     int index = 0;
-    List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().deleteContact(index);
-    List<ContactData> after = app.getContactHelper().getContactList();
+    List<ContactData> before = app.contact().list();
+    app.contact().delete(index);
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() - 1);
     before.remove(0);
     Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
@@ -37,9 +37,9 @@ public class ContactDeletionTests extends TestBase {
   @Test
   public void testDeleteContactFromEditPage(){
     int index = 0;
-    List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().deleteContact2(index);
-    List<ContactData> after = app.getContactHelper().getContactList();
+    List<ContactData> before = app.contact().list();
+    app.contact().delete2(index);
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() - 1);
     before.remove(0);
     Assert.assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));

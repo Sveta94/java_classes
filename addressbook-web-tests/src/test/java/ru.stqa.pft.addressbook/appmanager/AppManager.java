@@ -33,15 +33,15 @@ public class AppManager {
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
 
-  public NavigationHelper getNavigationHelper() {
+  public NavigationHelper navigationHelper() {
     return navigationHelper;
   }
 
-  public GroupHelper getGroupHelper() {
+  public GroupHelper group() {
     return groupHelper;
   }
 
-  public ContactHelper getContactHelper(){
+  public ContactHelper contact(){
     return contactHelper;
   }
 

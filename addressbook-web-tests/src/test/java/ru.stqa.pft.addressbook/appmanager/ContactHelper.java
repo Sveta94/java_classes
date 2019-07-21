@@ -17,7 +17,6 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
   NavigationHelper n = new NavigationHelper(wd);
-  SessionHelper s = new SessionHelper(wd);
 
   public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getFirstname());
@@ -76,11 +75,8 @@ public class ContactHelper extends HelperBase {
     close();
   }
 
-  public boolean isThereAContact() {
-    return isElementPresent((By.name("selected[]")));
-  }
 
-  public void createNewContact(ContactData contactData) {
+  public void create(ContactData contactData) {
     n.gotoContactPage();
     fillContactForm(contactData,true);
     submitContactCreation();;
@@ -93,24 +89,20 @@ public class ContactHelper extends HelperBase {
     submitContactModification();
     n.gotoHomePage();
   }
-  public void deleteContact(int index) {
+  public void delete(int index) {
     selectContact(index);
     deleteSelectedContact();
     confirmDeletion();
     n.gotoHomePage();
   }
 
-  public void deleteContact2(int index) {
+  public void delete2(int index) {
     editContact(index);
     deleteContactFromEditPage();
     n.gotoHomePage();
   }
 
-  public int contactCount() {
-    return wd.findElements(By.name("selected[]")).size();
-  }
-
-  public List<ContactData> getContactList() {
+  public List<ContactData> list() {
 
     List<ContactData> contactData = new ArrayList<ContactData>();
     List<WebElement> webElements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@ name = 'entry']"));
