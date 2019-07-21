@@ -15,16 +15,24 @@ public class ContactModificationTest extends TestBase {
     app.navigationHelper().gotoHomePage();
 
     if(app.contact().list().size() == 0){
-      app.contact().create(new ContactData("Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "Test"));
+      app.contact().create(new ContactData()
+              .withFirstname("Svetlana").withLastname("Avetisyan").withNickname("Sveta").withCompany("GGG")
+              .withAddress( "Ulitsa Yunikh Lenintsev").withMobile("+7915000000000").withEmail( "test@test.com")
+              .withBdayDay("7").withBdayMonth("February").withBdayYear("1994").withGroup("Test"));
     }
   }
-  @Test
+
+
+          @Test
 
           public void testContactModification(){
 
             List<ContactData> before  = app.contact().list();
              int index = before.size() - 1;
-            ContactData contact = new ContactData(before.get(before.size() - 1).getId(),"Svetlana", "Avetisyan", "Sveta", "GGG", "Ulitsa Yunikh Lenintsev", "+7915000000000", "testemail@example.com", "7", "February", "1994", "Test");
+            ContactData contact = new ContactData()
+                    .withID(before.get(index).getId()).withFirstname("Svetlana").withLastname("Avetisyan").withNickname("Sveta")
+                    .withCompany("GGG").withAddress( "Ulitsa Yunikh Lenintsev").withMobile("+7915000000000")
+                    .withEmail( "test@test.com").withBdayDay("7").withBdayMonth("February").withBdayYear("1994").withGroup("Test");
             app.contact().modifyContact(index, contact);
             List<ContactData> after = app.contact().list();
             Assert.assertEquals(after.size(),before.size());

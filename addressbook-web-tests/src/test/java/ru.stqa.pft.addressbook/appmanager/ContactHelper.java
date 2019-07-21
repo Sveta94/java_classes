@@ -114,8 +114,9 @@ public class ContactHelper extends HelperBase {
        String mobile = webelement.findElement(By.xpath(".//td[6]")).getText();
        int id = Integer.parseInt(webelement.findElement(By.tagName("input")).getAttribute("value"));
 
-       ContactData contact = new ContactData(id, firstName, lastName, null, null, address, mobile ,email, null, null,null, null);
-     contactData.add(contact);
+        contactData.add(new ContactData()
+                .withID(id).withFirstname(firstName).withLastname(lastName)
+                .withAddress(address).withMobile(mobile).withEmail(email));
      }
      return contactData;
 

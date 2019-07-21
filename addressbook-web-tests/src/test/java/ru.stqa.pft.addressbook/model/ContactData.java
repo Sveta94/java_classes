@@ -3,48 +3,20 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
-  private final String firstname;
-  private final String lastname;
-  private final String nickname;
-  private final String company;
-  private final String address;
-  private final String mobile;
-  private final String email;
-  private final String bdayDay;
-  private final String bdayMonth;
-  private final String bdayYear;
-  private final String group;
-  private int id;
+  private  String firstname;
+  private  String lastname;
+  private  String nickname;
+  private  String company;
+  private  String address;
+  private  String mobile;
+  private  String email;
+  private  String bdayDay;
+  private  String bdayMonth;
+  private  String bdayYear;
+  private  String group;
 
-  public ContactData(int  id, String firstName, String lastName, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String group) {
-    this.firstname = firstName;
-    this.lastname = lastName;
-    this.nickname = nickname;
-    this.company = company;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.bdayDay = bdayDay;
-    this.bdayMonth = bdayMonth;
-    this.bdayYear = bdayYear;
-    this.group = group;
-    this.id = id;
-  }
 
-  public ContactData(String firstName, String lastName, String nickname, String company, String address, String mobile, String email, String bdayDay, String bdayMonth, String bdayYear, String group) {
-    this.firstname = firstName;
-    this.lastname = lastName;
-    this.nickname = nickname;
-    this.company = company;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.bdayDay = bdayDay;
-    this.bdayMonth = bdayMonth;
-    this.bdayYear = bdayYear;
-    this.group = group;
-    this.id = 0;
-  }
+  private  int id;
 
   @Override
   public String toString() {
@@ -120,7 +92,65 @@ public class ContactData {
 
   public int getId() { return id; }
 
-  public void setId(int id) { this.id = id; }
+  public ContactData withID(int id) {
+    this.id = id;
+    return this;
+  }
+  public ContactData withFirstname(String firstname) {
+    this.firstname = firstname;
+    return this;
+  }
+
+  public ContactData withLastname(String lastname) {
+    this.lastname = lastname;
+    return this;
+  }
+
+  public ContactData withNickname(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public ContactData withCompany(String company) {
+    this.company = company;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+  public ContactData withMobile(String mobile) {
+    this.mobile = mobile;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+  }
+
+  public ContactData withBdayDay(String bdayDay) {
+    this.bdayDay = bdayDay;
+    return this;
+  }
+
+  public ContactData withBdayMonth(String bdayMonth) {
+    this.bdayMonth = bdayMonth;
+    return this;
+  }
+
+  public ContactData withBdayYear(String bdayYear) {
+    this.bdayYear = bdayYear;
+    return this;
+  }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
 
 
 }
