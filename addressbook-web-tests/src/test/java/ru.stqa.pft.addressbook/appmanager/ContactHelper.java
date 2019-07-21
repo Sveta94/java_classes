@@ -16,7 +16,8 @@ public class ContactHelper extends HelperBase {
 
     super(wd);
   }
-
+  NavigationHelper n = new NavigationHelper(wd);
+  SessionHelper s = new SessionHelper(wd);
 
   public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getFirstname());
@@ -80,11 +81,28 @@ public class ContactHelper extends HelperBase {
   }
 
   public void createNewContact(ContactData contactData) {
-    NavigationHelper n = new NavigationHelper(wd);
-    SessionHelper s = new SessionHelper(wd);
     n.gotoContactPage();
     fillContactForm(contactData,true);
     submitContactCreation();;
+    n.gotoHomePage();
+  }
+
+  public void modifyContact(int index, ContactData contact) {
+    editContact(index);
+    fillContactForm(contact, false);
+    submitContactModification();
+    n.gotoHomePage();
+  }
+  public void deleteContact(int index) {
+    selectContact(index);
+    deleteSelectedContact();
+    confirmDeletion();
+    n.gotoHomePage();
+  }
+
+  public void deleteContact2(int index) {
+    editContact(index);
+    deleteContactFromEditPage();
     n.gotoHomePage();
   }
 
