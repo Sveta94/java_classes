@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -71,7 +70,6 @@ public class GroupHelper extends HelperBase{
 
   }
 
-
   public void modifyGroup(GroupData group) {
     selectGroupByID(group.getId());
     initGroupModification();
@@ -80,11 +78,6 @@ public class GroupHelper extends HelperBase{
     returnToGroupPage();
   }
 
-  public void delete(int index) {
-    selectGroup(index);
-    deleteSelectedGroup();
-    returnToGroupPage();
-  }
   public void delete(GroupData group) {
     selectGroupByID(group.getId());
     deleteSelectedGroup();
@@ -93,19 +86,6 @@ public class GroupHelper extends HelperBase{
   }
 
 
-
-  public List<GroupData> list() {
-    List<GroupData> groupData = new ArrayList<GroupData>();
-    List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
-    for(WebElement element:elements){
-      String name = element.getText();
-      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-      groupData.add(new GroupData().withId(id).withName(name));
-    }
-       return groupData;
-
-
-  }
   public Set<GroupData> all() {
     Set<GroupData> groupData = new HashSet<GroupData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
