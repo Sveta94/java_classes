@@ -70,8 +70,6 @@ public class ContactData {
     return bdayYear;
   }
 
-  public String getGroup() { return group; }
-
   public int getId() { return id; }
 
   @Override
