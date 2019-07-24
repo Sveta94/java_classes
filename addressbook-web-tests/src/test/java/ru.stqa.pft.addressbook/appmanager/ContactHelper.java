@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import java.util.HashSet;
+import ru.stqa.pft.addressbook.model.Contacts;
+
 import java.util.List;
-import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -106,9 +106,9 @@ public class ContactHelper extends HelperBase {
   }
 
 
-  public Set<ContactData> all() {
+  public Contacts all() {
 
-    Set<ContactData> contactData = new HashSet<ContactData>();
+    Contacts contactData = new Contacts();
     List<WebElement> webElements = wd.findElements(By.xpath("//table[@id='maintable']/tbody/tr[@ name = 'entry']"));
      for(WebElement webelement: webElements){
        String lastName = webelement.findElement(By.xpath(".//td[2]")).getText();
