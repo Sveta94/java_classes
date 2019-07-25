@@ -77,7 +77,9 @@ public class ContactHelper extends HelperBase {
   public void confirmDeletion() {
     close();
   }
-
+ public int count(){
+    return wd.findElements(By.name("selected[]")).size();
+ }
 
   public void create(ContactData contactData) {
     n.gotoContactPage();
