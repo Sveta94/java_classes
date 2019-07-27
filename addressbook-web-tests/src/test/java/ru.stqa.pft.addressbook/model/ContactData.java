@@ -9,10 +9,13 @@ public class ContactData {
   private  String company;
   private  String address;
   private  String mobile;
+  private  String homePhone;
+  private  String workPhone;
   private  String email;
   private  String bdayDay;
   private  String bdayMonth;
   private  String bdayYear;
+  private  String allPhones;
   private  String group;
 
 
@@ -70,6 +73,12 @@ public class ContactData {
     return bdayYear;
   }
 
+  public String getAllPhones() { return allPhones; }
+
+  public String getHomePhone() { return homePhone; }
+
+  public String getWorkPhone() { return workPhone; }
+
   public int getId() { return id; }
 
   @Override
@@ -120,6 +129,14 @@ public class ContactData {
     this.mobile = mobile;
     return this;
   }
+  public ContactData withHomePhone(String homePhone) {
+    this.homePhone = homePhone;
+    return this;
+  }
+  public ContactData withWorkPhone(String workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
 
   public ContactData withEmail(String email) {
     this.email = email;
@@ -147,6 +164,9 @@ public class ContactData {
   }
 
 
-
+  public ContactData withAllPhones(String allPhones) {
+    this.allPhones = allPhones;
+    return this;
+  }
 }
 
