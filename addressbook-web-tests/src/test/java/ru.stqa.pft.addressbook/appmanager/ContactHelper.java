@@ -21,22 +21,22 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getFirstname());
     type(By.name("lastname"), contactData.getLastname());
-    type(By.name("nickname"), contactData.getNickname());
-    attach(By.name("photo"), contactData.getPhoto());
-    type(By.name("company"), contactData.getCompany());
+//    type(By.name("nickname"), contactData.getNickname());
+//    attach(By.name("photo"), contactData.getPhoto());
+//    type(By.name("company"), contactData.getCompany());
     type(By.name("address"), contactData.getAddress());
-    type(By.name("mobile"), contactData.getMobile());
+//    type(By.name("mobile"), contactData.getMobile());
     type(By.name("email"), contactData.getEmail());
-    click(By.name("bday"));
-    select(By.name("bday"), contactData.getBdayDay());
-    click(By.xpath("//option[@value='7']"));
-    click(By.name("bmonth"));
-    select(By.name("bmonth"), contactData.getBdayMonth());
-    click(By.xpath("//option[@value='February']"));
-    type(By.name("byear"), contactData.getBdayYear());
+//    click(By.name("bday"));
+//    select(By.name("bday"), contactData.getBdayDay());
+//    click(By.xpath("//option[@value='7']"));
+//    click(By.name("bmonth"));
+//    select(By.name("bmonth"), contactData.getBdayMonth());
+//    click(By.xpath("//option[@value='February']"));
+//    type(By.name("byear"), contactData.getBdayYear());
 
     if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText("Test3");
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText("Test 0");
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
@@ -161,7 +161,7 @@ public class ContactHelper extends HelperBase {
        int id = Integer.parseInt(webelement.findElement(By.tagName("input")).getAttribute("value"));
 
         contactCache.add(new ContactData()
-                .withID(id).withFirstname(firstName).withLastname(lastName).withAddress(address)
+                .withID(id).withFirstname(firstName).withLastname(lastName).withAddress(address).withEmail(email)
                 .withAllPhones(allPhones));
      }
      return contactCache;
