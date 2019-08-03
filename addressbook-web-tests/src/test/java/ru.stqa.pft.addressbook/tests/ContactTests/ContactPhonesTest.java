@@ -21,18 +21,28 @@ public class ContactPhonesTest extends TestBase {
     ContactData contact = app.contact().all().iterator().next();
     ContactData contactFromEditPage = app.contact().infoFromEditForm(contact);
     assertThat(contact.getAllPhones(), equalTo(mergePhones(contactFromEditPage)));
-    assertThat(contact.getEmail(), equalTo(contactFromEditPage.getEmail()));
+    assertThat(contact.getAllEmails(), equalTo(mergeEmails(contactFromEditPage)));
 
     }
   public static String mergePhones(ContactData contact){
     return Arrays.asList(contact.getHomePhone(),contact.getMobile(), contact.getWorkPhone())
             .stream().filter((s) -> ! s.equals(""))
-            .map(ContactPhonesTest::cleaned)
+            .map(ContactPhonesTest::cleanedPhone)
             .collect(Collectors.joining("\n"));
 
   }
+  public static String mergeEmails(ContactData contact){
+    return Arrays.asList(contact.getEmail(),contact.getEmail2(), contact.getEmail3())
+            .stream().filter((s) -> ! s.equals(""))
+            .map(ContactPhonesTest::cleanedEmail)
+            .collect(Collectors.joining("\n"));
 
-  public static String cleaned(String phone){
+  }
+  public static String cleanedPhone(String phone){
     return phone.replaceAll("\\s", "").replaceAll("[- ()]", "");
   }
+  public static String cleanedEmail(String email){
+    return email.replaceAll("\\s", "");
+  }
+
 }

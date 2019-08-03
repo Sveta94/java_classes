@@ -121,9 +121,14 @@ public class ContactHelper extends HelperBase {
     String home = wd.findElement(By.name("home")).getAttribute("value");
     String work = wd.findElement(By.name("work")).getAttribute("value");
     String address = wd.findElement(By.name("address")).getAttribute("value");
+    String email = wd.findElement(By.name("email")).getAttribute("value");
+    String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+    String email3 = wd.findElement(By.name("email3")).getAttribute("value");
+
     n.gotoHomePage();
     return new ContactData().withID(contact.getId()).withFirstname(firstname).withLastname(lastname)
-            .withAddress(address).withMobile(mobile).withHomePhone(home).withWorkPhone(work);
+            .withAddress(address).withMobile(mobile).withHomePhone(home).withWorkPhone(work).withEmail(email)
+            .withEmail2(email2).withEmail3(email3);
 
   }
 
@@ -156,12 +161,12 @@ public class ContactHelper extends HelperBase {
        String lastName = webelement.findElement(By.xpath(".//td[2]")).getText();
        String  firstName= webelement.findElement(By.xpath(".//td[3]")).getText();
        String address = webelement.findElement(By.xpath(".//td[4]")).getText();
-       String email = webelement.findElement(By.xpath(".//td[5]")).getText();
+       String allEmails = webelement.findElement(By.xpath(".//td[5]")).getText();
        String allPhones = webelement.findElement(By.xpath(".//td[6]")).getText();
        int id = Integer.parseInt(webelement.findElement(By.tagName("input")).getAttribute("value"));
 
         contactCache.add(new ContactData()
-                .withID(id).withFirstname(firstName).withLastname(lastName).withAddress(address).withEmail(email)
+                .withID(id).withFirstname(firstName).withLastname(lastName).withAddress(address).withAllEmails(allEmails)
                 .withAllPhones(allPhones));
      }
      return contactCache;
