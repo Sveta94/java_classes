@@ -34,7 +34,11 @@ dependencies {
         if(project.hasProperty('target')){
             systemProperty 'target', "${target}"
         }
-}
+        if(project.hasProperty('varifyUI')){
+            systemProperty 'varifyUI', "${verifyUI}"
+        }
+
+    }
 
     task testContacts (type: Test){
     useTestNG {
@@ -45,6 +49,9 @@ dependencies {
         }
         if(project.hasProperty('target')){
             systemProperty 'target', "${target}"
+        }
+        if(project.hasProperty('varifyUI')){
+            systemProperty 'varifyUI', "${verifyUI}"
         }
 
 
