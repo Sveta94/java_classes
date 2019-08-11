@@ -3,34 +3,85 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 import java.util.Objects;
+
 @XStreamAlias("contacts")
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
   @Expose
+  @Column(name = "firstname")
   private  String firstname;
+
   @Expose
+  @Column(name = "lastname")
   private  String lastname;
+
+  @Column(name = "nickname")
   private  String nickname;
+
+  @Column(name = "company")
   private  String company;
+
   @Expose
+  @Column(name = "address")
+  @Type(type = "text")
   private  String address;
+
+  @Column(name = "mobile")
+  @Type(type = "text")
   private  String mobile;
+
+  @Column(name = "home")
+  @Type(type = "text")
   private  String homePhone;
+
+  @Column(name = "work")
+  @Type(type = "text")
   private  String workPhone;
+
   @Expose
+  @Column(name = "email")
+  @Type(type = "text")
   private  String email;
+
+  @Column(name = "email2")
+  @Type(type = "text")
   private String email2;
+
+  @Column(name = "email3")
+  @Type(type = "text")
   private String email3;
+
+  @Transient
   private  String bdayDay;
+
+  @Transient
   private  String bdayMonth;
+
+  @Transient
   private  String bdayYear;
+
+  @Transient
   private  String allPhones;
+
+  @Transient
   private String allEmails;
+
+  @Transient
   private  String group;
-  private File photo;
+
+  @Column(name = "photo")
+  @Type(type = "text")
+  private String photo;
+
   @XStreamOmitField
+  @Id
+  @Column(name = "id")
   private  int id;
 
   @Override
@@ -44,7 +95,7 @@ public class ContactData {
             '}';
   }
 
-  public File getPhoto() { return photo; }
+  public File getPhoto() { return new File(photo); }
 
   public String getFirstname() {
     return firstname;
@@ -206,7 +257,7 @@ public class ContactData {
 
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 }
