@@ -13,9 +13,9 @@ public class GroupModificationTest extends TestBase {
 
   @BeforeClass
   private void ensurePreconditions() {
-    app.navigationHelper().gotoGroupPage();
-    if(app.group().all().size() == 0){
 
+    if(app.db().groups().size() == 0){
+      app.navigationHelper().gotoGroupPage();
       app.group().create(new GroupData().withName("Test1").withHeader("test2").withFooter("test3"));
     }
   }
@@ -23,12 +23,13 @@ public class GroupModificationTest extends TestBase {
   @Test
   public void testGroupModification(){
 
-    Groups before = app.group().all();
+    Groups before = app.db().groups();
     GroupData modifiedGroup = before.iterator().next();
+    app.navigationHelper().gotoGroupPage();
     GroupData group = new GroupData().withId(modifiedGroup.getId()).withName("Test1").withHeader("test2").withFooter("test3");
     app.group().modifyGroup(group);
     assertThat(app.group().count(), equalTo(before.size()));
-    Groups after = app.group().all();
+    Groups after = app.db().groups();
     assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
 
   }

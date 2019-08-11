@@ -13,6 +13,21 @@ import java.util.Objects;
 @Entity
 @Table(name = "addressbook")
 public class ContactData {
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    ContactData that = (ContactData) o;
+    return id == that.id &&
+            Objects.equals(firstname, that.firstname) &&
+            Objects.equals(lastname, that.lastname);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(firstname, lastname, id);
+  }
+
   @Expose
   @Column(name = "firstname")
   private  String firstname;
@@ -152,21 +167,6 @@ public class ContactData {
   public String getWorkPhone() { return workPhone; }
 
   public int getId() { return id; }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    ContactData that = (ContactData) o;
-    return id == that.id &&
-            Objects.equals(firstname, that.firstname) &&
-            Objects.equals(lastname, that.lastname);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(firstname, lastname, id);
-  }
 
   public ContactData withID(int id) {
     this.id = id;

@@ -38,19 +38,16 @@ public class AppManager {
   private ContactHelper contactHelper;
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
+  private DbHelper db;
 
   public NavigationHelper navigationHelper() {
     return navigationHelper;
   }
-
-  public GroupHelper group() {
-    return groupHelper;
-  }
-
+  public DbHelper db(){return db;}
+  public GroupHelper group() { return groupHelper; }
   public ContactHelper contact(){
     return contactHelper;
   }
-
   public SessionHelper getSessionHelper(){
     return sessionHelper;
   }
@@ -60,13 +57,13 @@ public class AppManager {
 
     String target =  System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+    db = new DbHelper();
     wd.manage().timeouts().implicitlyWait(0,TimeUnit.SECONDS);
     wd.get( properties.getProperty("web.baseUrl"));
     groupHelper = new GroupHelper(wd);
     contactHelper = new ContactHelper(wd);
     sessionHelper = new SessionHelper(wd);
     navigationHelper = new NavigationHelper(wd);
-
     sessionHelper.login(properties.getProperty("web.adminLogin"),(properties.getProperty("web.adminPassword")));
   }
 
