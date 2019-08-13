@@ -25,7 +25,7 @@ public class TestBase {
 
   Logger logger = LoggerFactory.getLogger(GroupCreationTest.class);
 
-  protected static final AppManager app = new AppManager(System.getProperty("browser", BrowserType.CHROME));
+  public static final AppManager app = new AppManager(System.getProperty("browser", BrowserType.CHROME));
 
   @BeforeSuite(alwaysRun = true)
   public void setUp() throws Exception {

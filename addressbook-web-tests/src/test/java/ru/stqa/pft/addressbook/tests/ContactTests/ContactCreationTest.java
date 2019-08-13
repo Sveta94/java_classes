@@ -7,6 +7,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 import ru.stqa.pft.addressbook.tests.TestBase;
 import java.io.BufferedReader;
 import java.io.File;
@@ -74,8 +76,9 @@ public class ContactCreationTest extends TestBase {
   @Test (dataProvider = "validContactsJson")
   public void testContactCreation(ContactData contact) throws Exception {
     app.navigationHelper().gotoHomePage();
+    Groups groups = app.db().groups();
     Contacts before = app.db().contacts();
-    app.contact().create(contact);
+    app.contact().create(contact.inGroup(groups.iterator().next()));
     assertThat(app.contact().count(), equalTo(before.size() + 1));
     Contacts after = app.db().contacts();
     assertThat(after, equalTo(before
@@ -90,4 +93,5 @@ public class ContactCreationTest extends TestBase {
   System.out.println(photo.getAbsolutePath());
   System.out.println(photo.exists());
    }
+
 }

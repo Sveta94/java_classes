@@ -7,12 +7,16 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
+
+import static ru.stqa.pft.addressbook.tests.TestBase.app;
 
 @XStreamAlias("contacts")
 @Entity
 @Table(name = "addressbook")
-public class ContactData {
+public class ContactData extends Groups {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -87,9 +91,6 @@ public class ContactData {
   @Transient
   private String allEmails;
 
-  @Transient
-  private  String group;
-
   @Column(name = "photo")
   @Type(type = "text")
   private String photo;
@@ -98,6 +99,20 @@ public class ContactData {
   @Id
   @Column(name = "id")
   private  int id;
+
+  public Groups getGroups() {
+    return  new Groups(groups);
+  }
+
+  @ManyToMany (fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+  public Set<GroupData> groups = new HashSet<GroupData>();
+
+
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
+    return this;
+  }
 
   @Override
   public String toString() {
@@ -239,11 +254,6 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
-
 
   public ContactData withAllPhones(String allPhones) {
     this.allPhones = allPhones;
@@ -260,5 +270,6 @@ public class ContactData {
     this.photo = photo.getPath();
     return this;
   }
+
 }
 
